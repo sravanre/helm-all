@@ -1,9 +1,9 @@
 web:
   name: firsflaskronunningonk8s
   app: firsflaskronunningonk8s
-  image: new_flask_app_version2
-  replicas: 3
-  imagePullPolicy: Never
+  image: public.ecr.aws/f7j1n6h0/sravan-py-flask-webserver
+  replicas: 4
+  imagePullPolicy: Always
   containerPort: 5000
 
 service:
