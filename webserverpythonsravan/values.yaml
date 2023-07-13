@@ -1,0 +1,16 @@
+web:
+  name: firsflaskronunningonk8s
+  app: firsflaskronunningonk8s
+  image: rambooreddy/kaniko-python-webserver:latest
+  replicas: 2
+  imagePullPolicy: Always
+  containerPort: 5000
+
+service:
+  name: flaskwebservice
+  port: 5000
+  protocol: TCP
+  # targetPort: 5000
+  app: firsflaskronunningonk8s
+  type: LoadBalancer
+

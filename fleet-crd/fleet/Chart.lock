@@ -1,0 +1,6 @@
+dependencies:
+- name: gitjob
+  repository: file://./charts/gitjob
+  version: 0.1.54
+digest: sha256:61aacf000314587ae0c3e7256dd4c1b678de140c2f2b21441c912a214f179d3d
+generated: "2023-06-19T13:17:25.61746373Z"

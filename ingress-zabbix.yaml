@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  hosts:
+  - host: zabbix.laplastech.cloud
+    paths:
+    - path: /
+      pathType: ImplementationSpecific
+  ingressClassName: nginx
+  pathType: Prefix
+  tls:
+  - hosts:
+    - zabbix.laplastech.cloud
+    secretName: letsencrypt-zabbix-cert
+

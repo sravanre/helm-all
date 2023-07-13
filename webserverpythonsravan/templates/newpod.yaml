@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ .Values.web.app }}
+  name: {{ .Values.web.name }}
+spec:
+  replicas: {{ .Values.web.replicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.web.app }}
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.web.app }}
+    spec:
+      containers:
+      - image: {{ .Values.web.image }}
+        name: new-flask-app-version2-flask
+        imagePullPolicy: {{ .Values.web.imagePullPolicy }}
+        ports:
+        - containerPort: {{ .Values.web.containerPort }}
+        resources: {}
